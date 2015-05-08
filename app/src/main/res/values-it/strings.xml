@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Spiccioli</string>
+    <string name="action_settings">Impostazioni</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_spiccioli">Spiccioli</string>
+    <string name="title_activity_transaction">Transazione</string>
+    <string name="transaction_button_save">Salva</string>
+    <string name="transaction_label_amount">Ammontare</string>
+    <string name="transaction_label_description">Descrizione</string>
+    <string name="spiccioli_button_addtransaction">Aggiungi Transazione</string>
+    <string name="transaction_button_delete">Elimina</string>
+</resources>

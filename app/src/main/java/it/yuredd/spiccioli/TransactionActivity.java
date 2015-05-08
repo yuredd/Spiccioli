@@ -35,7 +35,7 @@ public class TransactionActivity extends ActionBarActivity {
 
         if(description != null) {
             SpiccioliDB db = new SpiccioliDB(this, null, null, 1);
-            ArrayList<Transaction> transactions = db.findTransactions();
+            ArrayList<Transaction> transactions = db.findTransactions(description);
             if(transactions != null) {
                 if(!transactions.isEmpty()) {
                     Transaction transaction = transactions.iterator().next();
@@ -77,6 +77,18 @@ public class TransactionActivity extends ActionBarActivity {
 
         spiccioliDB.addTransaction(transaction);
 
+        spiccioliDB.close();
+
+        Intent resultData = new Intent();
+        //resultData.putExtra("newid",2);
+        setResult(Activity.RESULT_OK);
+        finish();
+
+    }
+
+    public void deleteTransaction(View view) {
+        SpiccioliDB spiccioliDB = new SpiccioliDB(this, null, null, 1);
+        spiccioliDB.deleteTransaction(descriptionText.getText().toString());
         spiccioliDB.close();
 
         Intent resultData = new Intent();

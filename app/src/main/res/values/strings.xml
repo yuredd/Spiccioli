@@ -5,4 +5,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_transaction">Transaction</string>
+    <string name="transaction_label_amount" >Amount</string>
+    <string name="transaction_button_save" >Save</string>
+    <string name="transaction_label_description">Description</string>
+    <string name="transaction_button_delete">Delete</string>
+    <string name="spiccioli_button_addtransaction">Add Transaction</string>
 </resources>

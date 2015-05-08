@@ -91,7 +91,7 @@ public class SpiccioliActivity extends ActionBarActivity {
         SecureRandom random = new SecureRandom();
 
         list.clear();
-        list.add("asd-" + new BigInteger(130, random).toString(5));
+//        list.add("asd-" + new BigInteger(130, random).toString(5));
 
         SpiccioliDB spiccioliDB = new SpiccioliDB(this, null, null, 1);
         ArrayList<Transaction> transactions = spiccioliDB.findTransactions();
