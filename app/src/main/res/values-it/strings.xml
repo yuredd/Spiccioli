@@ -10,4 +10,6 @@
     <string name="transaction_label_description">Descrizione</string>
     <string name="spiccioli_button_addtransaction">Aggiungi Transazione</string>
     <string name="transaction_button_delete">Elimina</string>
+    <string name="spiccioli_button_report">Sommario</string>
+    <string name="title_activity_report">Sommario</string>
 </resources>

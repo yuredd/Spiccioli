@@ -120,4 +120,8 @@ public class SpiccioliActivity extends ActionBarActivity {
         refreshTransactionsList();
     }
 
+    public void showReport(View view) {
+        Intent intent = new Intent(SpiccioliActivity.this, ReportActivity.class);
+        SpiccioliActivity.this.startActivity(intent);
+    }
 }
