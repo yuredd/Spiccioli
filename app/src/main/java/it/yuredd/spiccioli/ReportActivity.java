@@ -2,6 +2,7 @@ package it.yuredd.spiccioli;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -12,6 +13,10 @@ import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+
+import it.yuredd.spiccioli.database.SpiccioliDB;
+import it.yuredd.spiccioli.database.Transaction;
 
 
 public class ReportActivity extends ActionBarActivity {
@@ -27,11 +32,31 @@ public class ReportActivity extends ActionBarActivity {
 
         ArrayList<Entry> entries = new ArrayList<Entry>();
         entries.add(new Entry(20.0f, 1));
-        entries.add(new Entry(20.0f, 1));
 
         ArrayList<String> labels = new ArrayList<String>();
-        labels.add("Stupidad");
         labels.add("Vaccate");
+
+
+
+
+        SpiccioliDB spiccioliDB = new SpiccioliDB(this, null, null, 1);
+        ArrayList<Transaction> transactions = spiccioliDB.findTransactions();
+
+        if(transactions != null) {
+            Iterator<Transaction> iter = transactions.iterator();
+            while (iter.hasNext()) {
+                Transaction transaction = iter.next();
+
+                entries.add(new Entry(transaction.getAmount().floatValue(), entries.size()));
+                labels.add(transaction.getDescription());
+
+            }
+        } else {
+            Log.d("refreshList", "No items from DB");
+        }
+
+
+
 
         PieDataSet dataSet = new PieDataSet(entries, "dataset");
         dataSet.setSliceSpace(5.0f);
